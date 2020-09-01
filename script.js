@@ -33,8 +33,10 @@ function handleKeyPress(e) {
 let funButtonAdd = obj.buttonAdd.addEventListener('click', function () {
     for (var i = 0; i < obj.table.length; i++) {
         if (obj.table[i].innerText == '') {
-            obj.table[i].innerText = obj.name;
-            return false;
+            if (test()) {
+                obj.table[i].innerText = obj.name;
+                return false;
+            }
         }
     }
 });
@@ -54,6 +56,16 @@ let funStyle = obj.text.addEventListener('click', function () {
         obj.text.style.color = 'black';
     }
 });
+
+let test = function () {
+    for (var i = 0; i < obj.name.length; i++) {
+        if (isNaN(obj.name[i])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+};
 
 
 
