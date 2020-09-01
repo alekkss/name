@@ -8,13 +8,14 @@ let obj = {
     buttonAdd: document.querySelector('.add'),
     buttonClear: document.querySelector('.button_clear')
 };
-obj.button.onclick = function () {
+let clicks = obj.button.onclick = function () {
     let name = obj.input.value;
     obj.name = name;
     for (var i = 0; i < name.length; i++) {
         if (isNaN(name[i])) {
             obj.text.innerHTML = 'Ваше имя: ';
             obj.span.innerHTML = obj.name;
+
 
         } else {
             obj.text.innerHTML = 'Это ваше имя, вы уверены? ';
@@ -31,10 +32,14 @@ function handleKeyPress(e) {
     }
 }
 let funButtonAdd = obj.buttonAdd.addEventListener('click', function () {
+    let name = obj.input.value;
+    obj.name = name;
     for (var i = 0; i < obj.table.length; i++) {
         if (obj.table[i].innerText == '') {
-            if (test()) {
-                obj.table[i].innerText = obj.name;
+            if (funFilter()) {
+                obj.table[i].innerText = obj.input.value;
+                obj.text.innerHTML = 'Ваше имя: ';
+                obj.span.innerHTML = obj.input.value;
                 return false;
             }
         }
@@ -57,7 +62,7 @@ let funStyle = obj.text.addEventListener('click', function () {
     }
 });
 
-let test = function () {
+let funFilter = function () {
     for (var i = 0; i < obj.name.length; i++) {
         if (isNaN(obj.name[i])) {
             return true;

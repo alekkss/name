@@ -9,6 +9,11 @@ header {
     max-width: 100%;
     display: flex;
     justify-content: center;
+    max-width: 1170px;
+}
+
+main {
+    max-width: 1170px;
 }
 
 .table {
@@ -26,6 +31,7 @@ header {
     display: flex;
     justify-content: center;
     min-height: 16px;
+    text-transform: capitalize;
 }
 
 .table__column {
@@ -45,8 +51,7 @@ header {
 
 .header-text {
     max-width: 1170px;
-    margin: 0 277px 0 auto;
-    padding: 0 15px;
+    /* margin: 0 277px 0 auto; */
     text-align: center;
     margin-left: 547px;
     margin-right: 260px;
@@ -95,7 +100,7 @@ form {
     border: 1px solid black;
     font-size: 18px;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .form__input:focus {
